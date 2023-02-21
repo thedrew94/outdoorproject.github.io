@@ -1,50 +1,29 @@
-/* THREE PILLARS TO WRITE GOOD HTML CSS 
-
-RESPONSIVE WEB DESIGN
-    fluid layouts
-    media querries
-    correct units
-    desktop/mobile first strategy
-
-MAINTAINABLE AND SCALABLE CODE
-    write clean and easy to understand code
-    code that can be reusable and maintable
-    organize files, naming files, structure HTML
-
-WEB PERFORMANCE
-    smaller size and faster
-    less http request, little as possible file, little code as possible
-    compress code
-    less images
-    compress images
-
-*/
-
-
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    /* change the box model so that borders and padding are not adding to the total height or width that we specify*/
-    box-sizing: border-box;
+    /* box sizing property it is not an automatically inherit element */
+    box-sizing: inherit;
+}
+
+html {
+    /* 16px when on 100% font size settings 
+    10 % 16px = 0.625 = 62.5%*/
+    font-size: 62.5%;
 }
 
 body {
     /* properties related to font are inheritade so we add them in the body, doing so its efficient and will be inherited to the childs of the body */
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /* font-size: 16px; */
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+
+    /* change the box model so that borders and padding are not adding to the total height or width that we specify*/
+    box-sizing: border-box;
 }
 
 .header {
@@ -67,12 +46,12 @@ body {
 .logo-box {
     /* when absolute is specified the measurement will start counting from the nearest parent element that contains position: relative */
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;
+    height: 3.5rem;
 }
 
 .text-box {
@@ -89,14 +68,14 @@ body {
 
     /* to use when adding animation to fix the bug in the animation (shaking element) */
     backface-visibility: hidden;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -107,9 +86,9 @@ body {
 
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
 
     animation: moveInRight 1s ease-out;
 }
@@ -117,11 +96,11 @@ body {
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
 
     100% {
@@ -133,11 +112,11 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
 
     100% {
@@ -149,7 +128,7 @@ body {
 @keyframes moveInBottom{
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
 
     100% {
@@ -164,24 +143,25 @@ body {
 .btn-visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     /* inline block elements are considered as text 
     by setting text-align: center; we can center the element*/
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s;
     position: relative;
+    font-size: 1.6rem;
 }
 
 .btn:hover {
     transform: translateY(-3px);
     /* first value X direction shadow, second value Y direction shadow, third value Blur */
-    box-shadow: 0 10px 20px rgb(0, 0, 0, .2);
+    box-shadow: 0 1rem 2rem rgb(0, 0, 0, .2);
 }
 
 .btn:active {
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgb(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
 }
 
 .btn-white {
@@ -196,7 +176,7 @@ body {
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
