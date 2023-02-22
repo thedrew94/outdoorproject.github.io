@@ -1,3 +1,12 @@
+:root {
+    --color-primary: #55c57a;
+    --color-primary-light: rgb(126, 213, 111, 0.8);
+    --color-primary-dark: #28b485;
+    --color-custom-gray: #777;
+    --color-grey-light-1: #f7f7f7;
+    --color-black: rgba(0, 0, 0, 1);
+}
+
 *,
 *::after,
 *::before {
@@ -19,7 +28,7 @@ body {
     font-weight: 400;
     /* font-size: 16px; */
     line-height: 1.7;
-    color: #777;
+    color: var(--color-custom-gray);
     padding: 3rem;
 
     /* change the box model so that borders and padding are not adding to the total height or width that we specify*/
@@ -31,7 +40,7 @@ body {
     height: 95vh;
     background-image: linear-gradient(
         to right bottom,
-        rgba(126, 213, 111, 0.8),
+        var(--color-primary-light),
         rgb(40, 180, 133, 0.8)), 
         url('./img/hero.jpg');
     /* by setting cover, no matter the width of the element the img will be so that it fits the element */
@@ -156,12 +165,12 @@ body {
 .btn:hover {
     transform: translateY(-3px);
     /* first value X direction shadow, second value Y direction shadow, third value Blur */
-    box-shadow: 0 1rem 2rem rgb(0, 0, 0, .2);
+    box-shadow: 0 1rem 2rem var(--color-black, .2);
 }
 
 .btn:active {
     transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem var(--color-black, .2);
 }
 
 .btn-white {
@@ -197,4 +206,52 @@ body {
     animation: moveInBottom .5s ease-out .75s;
     /* by setting backwards the animation initial state will be set to the keyframes moveInBottom { 0% } to the state at 0%*/
     animation-fill-mode: backwards;
+}
+
+/* .row {
+    max-width: 114rem;
+    background-color: #eee;
+    to center a block element inside of a div
+    margin: 0 auto;
+}
+
+.row:not(:last-child) {
+    margin-bottom: 8rem;
+}
+
+.row div.col-1-of-3 {
+    background-color: red;
+} */
+
+.section-about {
+    background-color: var(--color-grey-light-1);
+    padding: 25rem 0;
+    margin-top: -20vh;
+}
+
+.heading-secondary {
+    /* inline blocks are considered text and can be center by using text align center */
+    display: inline-block;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
+}
+
+.heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgb(0, 0, 0, 0.2);
+    /* text-shadow: .5rem 1rem 2rem var(--color-black, 0.2); */
+}
+
+.u-center-text {
+    text-align: center;
+}
+
+.u-margin-bottom-8 {
+    
 }
